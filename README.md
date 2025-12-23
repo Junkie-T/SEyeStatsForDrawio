@@ -1,0 +1,2 @@
+# SEyeStatsForDrawio
+Drawioのノード統計
