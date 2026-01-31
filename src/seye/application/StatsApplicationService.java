@@ -18,16 +18,15 @@ import seye.table.PortTable;
 import seye.table.TRecord;
 
 public class StatsApplicationService {
+	/** グループに対応するネットセットのリストを保持するMapを返す **/
 	public Map<String,List<String>> getGroupNetSetMap() {
-		NetGraphDirectoryTableRepository ngdr = new NetGraphDirectoryTableRepository();
-		NetGraphDirectoryTable ntable = ngdr.get();
-		
-		GroupDirectoryTableRepository gdr = new GroupDirectoryTableRepository();
-		GroupDirectoryTable gtable = gdr.get();
+		NetGraphDirectoryTable ntable	= new NetGraphDirectoryTableRepository().get();
+		GroupDirectoryTable gtable		= new GroupDirectoryTableRepository().get();
 		
 		List<String> grouplist = gtable.projection(0);
 		
 		Map<String,List<String>> group_dir = new HashMap<>();
+		
 		for(String groupid : grouplist) {
 			group_dir.put(groupid,new ArrayList<String>());
 			ntable.select(1, groupid);
