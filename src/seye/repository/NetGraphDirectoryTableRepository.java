@@ -9,6 +9,10 @@ import java.util.List;
 import seye.table.NetGraphDirectoryTable;
 import seye.table.TRecord;
 
+/**
+ * 主キー ... ネットグラフセット(Drawioファイル)
+ * 従属キーA ... ネットグラフセットが存在する直近ディレクトリ
+ */
 public class NetGraphDirectoryTableRepository extends TableCSVRepository{
 	@Override
 	public NetGraphDirectoryTable get() {
